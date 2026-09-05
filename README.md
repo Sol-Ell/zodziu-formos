@@ -75,6 +75,13 @@ PORT=4000 node src/server.js
 - `views/` — EJS templates
 - `public/` — CSS + vendored htmx
 
+## Reference
+
+[`SKILL.md`](SKILL.md) is a comprehensive, self-contained implementation
+reference: the Hunspell `.aff`/`.dic` format, the paradigm-expansion algorithm,
+the tag→abbreviation mapping, the database schema, the web app structure, and a
+list of the non-obvious gotchas.
+
 ## License
 
 - **Application code** in this repository is licensed under the **MIT License**
