@@ -1,0 +1,10 @@
+<% rows.forEach(function (r) { %>
+  <a href="/zodzio-formos/<%= encodeURIComponent(r.surface) %>"><%= esc(r.surface) %></a>
+<% }) %>
+<% if (hasMore) { %>
+  <button id="more-btn" class="btn more" hx-swap-oob="true"
+          hx-get="/<%= letter %>/page/<%= page + 1 %>"
+          hx-target="#browse-list" hx-swap="beforeend">Rodyti daugiau</button>
+<% } else { %>
+  <span id="more-btn" hx-swap-oob="true"></span>
+<% } %>

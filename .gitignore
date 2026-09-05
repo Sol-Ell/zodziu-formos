@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+.xdg/
+
+# Built databases (regenerate with `pnpm run seed`)
+data/*.db
+data/*.db-*
+data/*.db-wal
+data/*.db-shm

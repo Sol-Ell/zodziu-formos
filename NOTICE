@@ -1,0 +1,14 @@
+Third-party data notices
+========================
+
+The files under `data/source/` (`lt_LT.aff`, `lt_LT.dic`) are part of the
+"Lithuanian dictionary of Hunspell affixes" (Lietuvių kalbos Hunspell afiksų
+žodynas) by Virginijus Dadurkevičius:
+
+    https://github.com/dadurka/hunspell_morphology_lt
+
+Copyright (c) Virginijus Dadurkevičius. Licensed under MPL 1.1 / GPLv3+ /
+LGPLv3+ (tri-license); see the license header inside `data/source/lt_LT.aff`.
+
+These files are redistributed unmodified as the input data used to build the
+dictionary database.

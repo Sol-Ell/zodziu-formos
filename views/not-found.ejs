@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="lt">
+<%- include('partials/head', { title: word + ' gramatinės formos' }) %>
+<body>
+  <%- include('partials/nav') %>
+  <main class="container">
+    <div class="word-page">
+      <h1><%= esc(word) %> gramatinės formos</h1>
+      <p class="not-found">Žodis „<b><%= esc(word) %></b>“ žodyne nerastas.</p>
+      <% if (suggestions && suggestions.length) { %>
+        <p>Galbūt turėjote omenyje:</p>
+        <div class="browse-list">
+          <% suggestions.forEach(function (s) { %>
+            <a href="/zodzio-formos/<%= encodeURIComponent(s) %>"><%= esc(s) %></a>
+          <% }) %>
+        </div>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<header class="site-header">
+  <a class="brand" href="/">Žodžių formos</a>
+  <span class="tagline">lietuvių kalbos žodžių formų žodynas</span>
+</header>
+
+<section class="search-block">
+  <form method="POST" action="/search">
+    <div class="input-row">
+      <input type="text" name="word" class="suggest" placeholder="įveskite ieškomą žodį"
+             autocomplete="off" spellcheck="false"
+             hx-post="/search/suggestion" hx-trigger="keyup changed delay:200ms"
+             hx-target="#suggestion" hx-swap="innerHTML">
+      <button class="btn" type="submit">IEŠKOTI</button>
+    </div>
+  </form>
+  <div id="suggestion" class="suggestion"></div>
+  <nav id="letters" class="letters">
+    <% LETTERS.forEach(function (L) { %>
+      <a href="/<%= L %>"><%= L %></a>
+    <% }) %>
+  </nav>
+</section>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="lt">
+<%- include('partials/head', { title: word + ' gramatinės formos' }) %>
+<body>
+  <%- include('partials/nav') %>
+  <main class="container">
+    <div class="word-page">
+      <h1><%= esc(word) %> gramatinės formos</h1>
+
+      <p class="lemma-line"><a class="lemma" href="/zodzio-formos/<%= encodeURIComponent(lemma) %>"><%= esc(lemma) %></a> →</p>
+
+      <div class="analyses">
+        <% analyses.forEach(function (a, i) { %>
+          <div class="<%= i === 0 ? 'analysis primary' : 'analysis alt' %>">
+            <%= i === 0 ? '' : '└' %><%= esc(word) %> – <%= esc(a.analysisStr) %>
+          </div>
+        <% }) %>
+      </div>
+
+      <% if (otherLemmas && otherLemmas.length) { %>
+        <div class="homonyms">
+          Kiti leidimai:
+          <% otherLemmas.forEach(function (o) { %>
+            <a href="/zodzio-formos/<%= encodeURIComponent(o.lemma) %>"><%= esc(o.lemma) %></a>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <%- paradigmHtml %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

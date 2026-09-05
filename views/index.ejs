@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="lt">
+<%- include('partials/head', { title: 'Žodžių formų žodynas' }) %>
+<body>
+  <%- include('partials/nav') %>
+  <main class="container">
+    <div id="home">
+      <div id="word-heading">
+        <h1>Žodžių formų žodynas</h1>
+      </div>
+      <p>Žodžių formos – tai lietuvių kalbos žodžių formų žodynas (lietuvių kalbos gramatikos žodynas arba morfologinis žodynas).</p>
+      <p>Žodžių formų žodyne yra <b><%= Number(lemmaCount).toLocaleString('lt-LT') %></b> žodžių (lemų) ir
+         <b><%= Number(formCount).toLocaleString('lt-LT') %></b> žodžių formų.</p>
+      <p>Įveskite žodį (pagrindinę formą ar bet kurią kaitybinę formą) ir pamatysite jo gramatinę analizę bei visą kaitybos paradigmą.</p>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

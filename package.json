@@ -1,0 +1,28 @@
+{
+  "name": "zodziu-formos",
+  "version": "0.1.0",
+  "description": "Offline Lithuanian word-form (morphological) dictionary — look up any word form and see its grammatical analysis and full inflection paradigm",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "lithuanian",
+    "lietuviu",
+    "morphology",
+    "dictionary",
+    "word-forms",
+    "linguistics"
+  ],
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/build-db.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "htmx.org": "^2.0.4"
+  }
+}

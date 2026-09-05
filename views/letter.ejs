@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="lt">
+<%- include('partials/head', { title: 'Žodžiai iš ' + letter + ' raidės' }) %>
+<body>
+  <%- include('partials/nav') %>
+  <main class="container">
+    <div class="browse-page">
+      <h1>Žodžiai iš <%= esc(letter) %> raidės</h1>
+      <div class="browse-list" id="browse-list">
+        <% rows.forEach(function (r) { %>
+          <a href="/zodzio-formos/<%= encodeURIComponent(r.surface) %>"><%= esc(r.surface) %></a>
+        <% }) %>
+      </div>
+      <% if (hasMore) { %>
+        <button id="more-btn" class="btn more"
+                hx-get="/<%= letter %>/page/<%= page + 1 %>"
+                hx-target="#browse-list" hx-swap="beforeend">Rodyti daugiau</button>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
